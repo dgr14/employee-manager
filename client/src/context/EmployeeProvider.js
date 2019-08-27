@@ -24,6 +24,8 @@ class EmployeeProvider extends Component {
         }
     }
 
+    
+
     handleChange = (e) => {
         const { name, value } = e.target
 
@@ -33,13 +35,16 @@ class EmployeeProvider extends Component {
     }
 
     clearInputs = () => {
+        console.log('i am clearing')
         this.setState({
-            _id: "",
-            firstName: "",
-            lastName: "",
-            email: "",
-            phoneNumber: ""
-        })
+                inputs: {
+                    _id: "",
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    phoneNumber: ""
+                }
+            })
     }
 
     handleSubmit = (e) => {
@@ -48,6 +53,8 @@ class EmployeeProvider extends Component {
         const newObj = {...this.state.inputs}
         this.createEmployee(newObj)
         this.getEmployees()
+        this.clearInputs()
+        console.log('ran the clear inputs maybe?')
 
     }
     handleEdit = (e) => {
@@ -125,3 +132,40 @@ export const withEmployees = C => props => (
 )
 
 export default EmployeeProvider
+
+
+
+
+
+
+// Hooks Example
+
+// import React, {useState, useEffect} from 'react'
+
+// const EmployeeProvider = () => {
+
+//     // This is effectively ComponentDidMount
+//     useEffect(()=> {
+//         handleChange()
+//     })
+
+//     const [inputs, setInputs] = useState({
+//                                             _id: "",
+//                                             firstName: "",
+//                                             lastName: "",
+//                                             email: "",
+//                                             phoneNumber: ""
+//                                         })
+    
+//     const [employees, setEmployees] = useState([])
+
+//     const handleChange = (e) => {
+//         const { name, value } = e.target
+
+//         setInputs(prevInputs => {
+//             return {...prevInputs, [name]: value}
+//         })
+//     }
+
+//     const mappedInputs = inputs.map(input => )
+// }
