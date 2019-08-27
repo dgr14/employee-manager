@@ -34,7 +34,7 @@ employeeRouter.post("/", (req, res, next) => {
 
 // What endpoint do I use for my put request?
 // Should I route to my view component?
-employeeRouter.put("/response/:_id",(req, res, next) => {
+employeeRouter.put("/:_id",(req, res, next) => {
     Employee.findOneAndUpdate(
         {_id: req.params._id, },
         // adding to array thats inside data

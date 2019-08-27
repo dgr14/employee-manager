@@ -13,23 +13,66 @@ class EmployeeProvider extends Component {
     constructor() {
         super()
         this.state = {
+            inputs: {
+                _id: "",
+                firstName: "",
+                lastName: "",
+                email: "",
+                phoneNumber: ""
+            },
             employees: []
         }
     }
 
+    handleChange = (e) => {
+        const { name, value } = e.target
+
+        this.setState(prevState => ({
+            inputs: {...prevState.inputs, [name] : value}
+        }))
+    }
+
+    clearInputs = () => {
+        this.setState({
+            _id: "",
+            firstName: "",
+            lastName: "",
+            email: "",
+            phoneNumber: ""
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(e.target)
+        const newObj = {...this.state.inputs}
+        this.createEmployee(newObj)
+        this.getEmployees()
+
+    }
+    handleEdit = (e) => {
+        e.preventDefault();
+        axios.get('_id')
+        axios.put()
+        
+    }
+
     getEmployees = () => {
-        employeeAxios.get("/api/employees")
+        axios.get("/employees")
             .then(res => {
                 this.setState({ employees: res.data })
+                    console.log(this.state.employees)
             })
             .catch(err => console.log(err.response.data.errMsg))
     }
 
     createEmployee = newEmployee => {
         console.log(newEmployee)
-        employeeAxios.post("/api/employees", newEmployee)
+        console.log("test2")
+
+        axios.post("/employees", newEmployee)
             .then(res => {
-                console.log(res.data)
+                console.log("test")
                 this.setState(prevState => ({ employees: [ ...prevState.employees, res.data] }), () => console.log(this.state.employees))
                 // this.getEmployees()
             })
@@ -37,7 +80,7 @@ class EmployeeProvider extends Component {
     }
 
     addEmployee = (newEmployee, _id) => {
-        employeeAxios.put(`/api/employees/${_id}`, newEmployee)
+        employeeAxios.put(`/employees/${_id}`, newEmployee)
             .then(response => {
                 this.setState(prevState => ({
                     employees: prevState.employees.map(employee => employee._id === _id ? response.data : employee)
@@ -65,6 +108,8 @@ class EmployeeProvider extends Component {
                 getEmployees: this.getEmployees,
                 createEmployee: this.createEmployee,
                 addEmployee: this.addEmployee,
+                handleSubmit: this.handleSubmit,
+                handleChange: this.handleChange
 
             }}>
             { this.props.children }
