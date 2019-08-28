@@ -20,7 +20,8 @@ class EmployeeProvider extends Component {
                 email: "",
                 phoneNumber: ""
             },
-            employees: []
+            employees: [],
+            toggle: true
         }
     }
 
@@ -86,8 +87,9 @@ class EmployeeProvider extends Component {
             .catch(err => console.log(err.response.data.errMsg))
     }
 
-    addEmployee = (newEmployee, _id) => {
-        employeeAxios.put(`/employees/${_id}`, newEmployee)
+    editEmployee = (updatedEmployee, _id) => {
+        console.log(updatedEmployee, _id)
+        axios.put(`/employees/${_id}`, updatedEmployee)
             .then(response => {
                 this.setState(prevState => ({
                     employees: prevState.employees.map(employee => employee._id === _id ? response.data : employee)
@@ -114,9 +116,10 @@ class EmployeeProvider extends Component {
                 removeOldEmployee: this.removeOldEmployee,
                 getEmployees: this.getEmployees,
                 createEmployee: this.createEmployee,
-                addEmployee: this.addEmployee,
+                editEmployee: this.editEmployee,
                 handleSubmit: this.handleSubmit,
-                handleChange: this.handleChange
+                handleChange: this.handleChange,
+                handleToggle: this.handleToggle
 
             }}>
             { this.props.children }

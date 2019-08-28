@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios'
 import View from './View'
 import { withEmployees } from './context/EmployeeProvider'
+import Employee from './Employee'
 
 class App extends Component {
   constructor(){
@@ -24,13 +25,7 @@ class App extends Component {
     render(){
       const mappedEmployees = this.props.employees.map(employee => {
         return (
-          <div className='mapped'>
-            <p>Employee ID: {employee._id}</p>
-            <p>First Name: {employee.firstName}</p>
-            <p>Last Name: {employee.lastName}</p>
-            <p>E-mail: {employee.email}</p>
-            <p>Phone Number: {employee.phoneNumber}</p>
-          </div>
+          <Employee employee={employee} key={employee._id}/>
         )
       }).reverse()
       return (

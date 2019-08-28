@@ -4,7 +4,7 @@ import { withEmployees } from './context/EmployeeProvider'
 
 function EmployeeForm(props) {
     const {handleChange, handleSubmit, inputs  } = props
-    console.log(inputs)
+    // console.log(inputs)
     return (
         <form className='empForm'>
             <input
@@ -43,7 +43,6 @@ function EmployeeForm(props) {
             placeholder="Phone Number"/>
 
             <button onClick={handleSubmit} value='create' className='submitButton'> Submit </button>
-            <button value='edit' className='editButton'> Edit </button>
         </form>
     )
 }
