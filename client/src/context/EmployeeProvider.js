@@ -14,7 +14,7 @@ class EmployeeProvider extends Component {
         super()
         this.state = {
             inputs: {
-                _id: "",
+                id: "",
                 firstName: "",
                 lastName: "",
                 email: "",
@@ -39,7 +39,7 @@ class EmployeeProvider extends Component {
         console.log('i am clearing')
         this.setState({
                 inputs: {
-                    _id: "",
+                    id: "",
                     firstName: "",
                     lastName: "",
                     email: "",
@@ -87,12 +87,19 @@ class EmployeeProvider extends Component {
             .catch(err => console.log(err.response.data.errMsg))
     }
 
+    rerender = () => {
+        this.setState(prevState => ({
+            employees: prevState.employees
+        }))
+    }
+
     editEmployee = (updatedEmployee, _id) => {
         console.log(updatedEmployee, _id)
         axios.put(`/employees/${_id}`, updatedEmployee)
             .then(response => {
+                console.log(response.data)
                 this.setState(prevState => ({
-                    employees: prevState.employees.map(employee => employee._id === _id ? response.data : employee)
+                    employees: prevState.employees.map(employee => employee._id === response.data._id ? response.data : employee)
                 }))
             })
     }
@@ -113,6 +120,7 @@ class EmployeeProvider extends Component {
             <Provider
             value={{
                 ...this.state,
+                rerender: this.rerender,
                 removeOldEmployee: this.removeOldEmployee,
                 getEmployees: this.getEmployees,
                 createEmployee: this.createEmployee,

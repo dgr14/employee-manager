@@ -1,11 +1,13 @@
 import React, {Component, useEffect} from 'react'
 import { withEmployees } from './context/EmployeeProvider'
+import './Employee.css'
 
 class Employee extends Component {
   constructor(props){
     super(props)
     this.state = {
       toggle: true,
+      id: props.employee.id,
       firstName: props.employee.firstName,
       lastName: props.employee.lastName,
       email: props.employee.email,
@@ -38,7 +40,7 @@ handleChange = (e) => {
 }
 
 render(){
-  const {employee, editEmployee} = this.props
+  const {employee, editEmployee, rerender} = this.props
   // console.log(employee)
   // const {toggle} = this.state
 // console.log(this.state.toggle)
@@ -50,23 +52,34 @@ render(){
 
         <div className='mapped'>
 
-          <p>Employee ID: {employee._id}</p>
+          <p>Employee ID: {employee.id}</p>
           <p>First Name: {employee.firstName}</p>
           <p>Last Name: {employee.lastName}</p>
           <p>E-mail: {employee.email}</p>
           <p>Phone Number: {employee.phoneNumber}</p>
 
           <button onClick={() => {
-            editEmployee()
+            rerender()
+            {/* editEmployee() */}
             this.handleToggle()
             }}>Edit</button>
 
         </div>
         :
-        <div>
-          <input name="firstName" onChange={this.handleChange} value={this.state.firstName} />
-          <button onClick={() => editEmployee({firstName: this.state.firstName,lastName: this.state.lastName, email: this.state.email, phone: this.state.phoneNumber}, employee._id)
-          }>Submit</button>
+        <div className="updateDiv">
+
+          <input name="id" onChange={this.handleChange} placeholder={`Employee ID: ${this.state.id}`}/>
+          <input name="firstName" onChange={this.handleChange} placeholder={`First Name: ${this.state.firstName}`} />
+          <input name="lastName" onChange={this.handleChange} placeholder={`Last Name: ${this.state.lastName}`} />
+          <input name="email" onChange={this.handleChange} placeholder={`E-Mail: ${this.state.email}`} />
+          <input name="phoneNumber" onChange={this.handleChange} placeholder={`Phone Number: ${this.state.phoneNumber}`} />
+
+          <div className='updateButtonDiv'>
+            <button onClick={() => {
+              editEmployee({id: this.state.id, firstName: this.state.firstName,lastName: this.state.lastName, email: this.state.email, phone: this.state.phoneNumber}, employee._id)
+            this.handleToggle()}}>Submit</button>
+          </div>
+
         </div>
         }
         

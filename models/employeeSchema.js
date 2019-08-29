@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const bcrypt = require("bcrypt")
 const employeeSchema = new Schema ({
     // Employee ID number
-    _id: {
+    id: {
         type: String,
         required: false
     },

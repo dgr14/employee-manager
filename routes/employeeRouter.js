@@ -35,11 +35,14 @@ employeeRouter.post("/", (req, res, next) => {
 // What endpoint do I use for my put request?
 // Should I route to my view component?
 employeeRouter.put("/:_id",(req, res, next) => {
+    console.log(req.body)
+    const newObject = req.body
     Employee.findOneAndUpdate(
         {_id: req.params._id, },
         // adding to array thats inside data
         // What will I add to instead of responses
-        {$push: {responses: req.body.response}},
+        // Need to figure out how to display the updated data
+        {newObject},
         {new: true}, (error, updatedEmployee) => {
             if(error) {
                 res.status(500)

@@ -9,8 +9,8 @@ function EmployeeForm(props) {
         <form className='empForm'>
             <input
             onChange={handleChange}
-            value={inputs._id}
-            name="_id"
+            value={inputs.id}
+            name="id"
             type="text"
             placeholder="Employee ID"/>
 
