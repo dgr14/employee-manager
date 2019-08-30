@@ -33,7 +33,9 @@ class App extends Component {
         <div className="App">
           <h1 className='headerText'>Employee Manager</h1>
           <View />
-          {mappedEmployees}
+          <div className='mappedDiv'>
+            {mappedEmployees}
+          </div>
         </div>
       )
     }

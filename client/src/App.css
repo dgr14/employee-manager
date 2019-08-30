@@ -6,6 +6,11 @@
   font-size: 3em;
 }
 
+.mappedDiv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .mapped {
   display: flex;
   flex-direction: column;
