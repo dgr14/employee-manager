@@ -23,7 +23,7 @@ class App extends Component {
   //   }
   // }
     render(){
-      console.log(this.props)
+      // console.log(this.props)
       const mappedEmployees = this.props.employees.map(employee => {
         return (
           <Employee employee={employee} key={employee._id}/>

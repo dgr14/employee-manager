@@ -35,19 +35,21 @@ employeeRouter.post("/", (req, res, next) => {
 // What endpoint do I use for my put request?
 // Should I route to my view component?
 employeeRouter.put("/:_id",(req, res, next) => {
-    console.log(req.body)
+    // console.log(req.body)
     const newObject = req.body
+    console.log(newObject)
     Employee.findOneAndUpdate(
-        {_id: req.params._id, },
+        {_id: req.params._id },
         // adding to array thats inside data
         // What will I add to instead of responses
         // Need to figure out how to display the updated data
-        {newObject},
+        newObject,
         {new: true}, (error, updatedEmployee) => {
             if(error) {
                 res.status(500)
                 return next(error)
             }
+            console.log(updatedEmployee)
             return res.status(201).send(updatedEmployee)
         }
     )
@@ -56,7 +58,8 @@ employeeRouter.put("/:_id",(req, res, next) => {
 employeeRouter.get('/:employeeId', (req, res, next) => {
     
     // Addition: Change to findOne and include the seatch criteria for users
-    Employee.findOne({_id: req.params.employeeId, user: req.user._id}, (err, employee) => {
+    console.log(req.params)
+    Employee.findOne({_id: req.params.employeeId}, (err, employee) => {
         if (err) {
             res.status(500)
             return next (err)
@@ -69,26 +72,26 @@ employeeRouter.get('/:employeeId', (req, res, next) => {
     })
 })
 
-employeeRouter.put("/:employeeId", (req, res, next) => {
-    // Addition: Change to findOneAndUpdate and include the query for users
-    Employee.findOneAndUpdate(
-        // Updated query to include user
-        {_id: req.params.employeeId, user: req.user._id},
-        req.body,
-        {new: true},
-        (err, employee) => {
-            if (err) {
-                res.status(500)
-                return next(err)
-            }
-            return res.send(employee)
-        }
-    )
-})
+// employeeRouter.put("/:employeeId", (req, res, next) => {
+//     // Addition: Change to findOneAndUpdate and include the query for users
+//     Employee.findOneAndUpdate(
+//         // Updated query to include user
+//         {_id: req.params.employeeId, user: req.user._id},
+//         req.body,
+//         {new: true},
+//         (err, employee) => {
+//             if (err) {
+//                 res.status(500)
+//                 return next(err)
+//             }
+//             return res.send(employee)
+//         }
+//     )
+// })
 
 // Addition: Change to findOneAndRemove and include the search criteria for users
 employeeRouter.delete("/:employeeId", (req, res, next) => {
-    Employee.findOneAndRemove({_id: req.params.employeeId, user: req.user._id}, (err, deletedEmployee) => {
+    Employee.findOneAndRemove({_id: req.params.employeeId}, (err, deletedEmployee) => {
         if (err) {
             res.status(500)
             return next(err)

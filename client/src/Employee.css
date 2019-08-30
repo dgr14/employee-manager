@@ -11,6 +11,12 @@ button {
   height: 2em;
 }
 
+.mapContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .updateDiv {
   display: flex;
   flex-direction: column;
@@ -27,7 +33,7 @@ button {
 }
 .updateDiv button {
   margin: 5px;
-  width: 15em;
+  width: 7.5em;
   background-color: #4C4CA6;
   color: ivory;
 }

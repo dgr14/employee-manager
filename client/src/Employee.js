@@ -40,13 +40,13 @@ handleChange = (e) => {
 }
 
 render(){
-  const {employee, editEmployee, rerender} = this.props
+  const {employee, editEmployee, rerender, removeOldEmployee} = this.props
   // console.log(employee)
   // const {toggle} = this.state
 // console.log(this.state.toggle)
 // console.log(this.props)
       return (
-        <div>
+        <div className='mapContainer'>
 
         {this.state.toggle ?
 
@@ -76,8 +76,11 @@ render(){
 
           <div className='updateButtonDiv'>
             <button onClick={() => {
-              editEmployee({id: this.state.id, firstName: this.state.firstName,lastName: this.state.lastName, email: this.state.email, phone: this.state.phoneNumber}, employee._id)
+              editEmployee({id: this.state.id, firstName: this.state.firstName,lastName: this.state.lastName, email: this.state.email, phoneNumber: this.state.phoneNumber, _id: employee._id}, employee._id)
             this.handleToggle()}}>Submit</button>
+            <button onClick={() => {
+            removeOldEmployee(employee._id)
+            this.handleToggle()}}>Delete</button>
           </div>
 
         </div>

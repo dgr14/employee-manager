@@ -4,7 +4,7 @@ const { Consumer, Provider } = React.createContext();
 const employeeAxios = axios.create();
 
 employeeAxios.interceptors.request.use((config) => {
-    const token = localStorage.getitem("token");
+    const token = localStorage.getItem("token");
     config.headers.Authorization = `Bearer ${token}`
     return config;
 })
@@ -36,7 +36,7 @@ class EmployeeProvider extends Component {
     }
 
     clearInputs = () => {
-        console.log('i am clearing')
+        // console.log('i am clearing')
         this.setState({
                 inputs: {
                     id: "",
@@ -55,7 +55,7 @@ class EmployeeProvider extends Component {
         this.createEmployee(newObj)
         this.getEmployees()
         this.clearInputs()
-        console.log('ran the clear inputs maybe?')
+        // console.log('ran the clear inputs maybe?')
 
     }
     handleEdit = (e) => {
@@ -105,9 +105,10 @@ class EmployeeProvider extends Component {
     }
 
     removeOldEmployee = _id => {
-        employeeAxios.delete(`/api/employees/${_id}`, {living: false})
+        axios.delete(`/employees/${_id}`)
             .then(res => {
                 console.log(res)
+                this.getEmployees()
                 // set state then filter over prevState.questions and return question if question._id !== to _id
                     // how?
 
