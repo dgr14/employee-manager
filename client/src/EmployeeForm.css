@@ -4,6 +4,16 @@ input {
   margin: 0.5em 2.5em;
 }
 
+.empInput {
+  width: 10em;
+  font-size: 16px;
+  text-align: center;
+}
+
+.empInput::placeholder {
+  color: #4C4CA6;
+}
+
 button {
   background-color: ivory;
   margin-left: 0.5em;
@@ -12,8 +22,17 @@ button {
   outline: none;
 }
 
-.submitButton, .editButton {
-  width: 5em;
+.submitButton {
+  width: 6em;
+  background-color: #E6E6FA;
+  border: 2px solid ivory;
+  border-radius: 5px;
+}
+
+.formButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .empForm {
@@ -27,7 +46,7 @@ button {
     align-items: center;
     justify-content: center;
   }
-  .empForm input {
+  .empForm .empInput {
     width: 20em;
   }
   .empForm .formButton {

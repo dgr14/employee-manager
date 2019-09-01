@@ -57,7 +57,7 @@ render(){
           <p>Last Name: {employee.lastName}</p>
           <p>E-mail: {employee.email}</p>
           <p>Phone Number: {employee.phoneNumber}</p>
-          
+
           <div className='editButtonDiv'>
           <button onClick={() => {
             rerender()
@@ -70,11 +70,11 @@ render(){
         :
         <div className="updateDiv">
 
-          <input name="id" onChange={this.handleChange} placeholder={`Employee ID: ${this.state.id}`}/>
-          <input name="firstName" onChange={this.handleChange} placeholder={`First Name: ${this.state.firstName}`} />
-          <input name="lastName" onChange={this.handleChange} placeholder={`Last Name: ${this.state.lastName}`} />
-          <input name="email" onChange={this.handleChange} placeholder={`E-Mail: ${this.state.email}`} />
-          <input name="phoneNumber" onChange={this.handleChange} placeholder={`Phone Number: ${this.state.phoneNumber}`} />
+          <input name="id" onChange={this.handleChange} placeholder={`Employee ID: ${this.state.id}`} className='editInput' />
+          <input name="firstName" onChange={this.handleChange} placeholder={`First Name: ${this.state.firstName}`} className='editInput' />
+          <input name="lastName" onChange={this.handleChange} placeholder={`Last Name: ${this.state.lastName}`} className='editInput' />
+          <input name="email" onChange={this.handleChange} placeholder={`E-Mail: ${this.state.email}`} className='editInput' />
+          <input name="phoneNumber" onChange={this.handleChange} placeholder={`Phone Number: ${this.state.phoneNumber}`} className='editInput' />
 
           <div className='updateButtonDiv'>
             <button onClick={() => {

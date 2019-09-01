@@ -1,4 +1,5 @@
 $lavender: #E6E6FA
+$background-navy: #4C4CA6
 
 input
     background-color: ivory
@@ -21,7 +22,7 @@ input
         background-color: ivory
 
     .editButton
-        background-color: ivory
+        background-color: $lavender
         margin-left: 0.5em
         border-radius: 5px
         border: 2px solid #4C4CA6
@@ -37,6 +38,8 @@ input
     width: 80%
     height: 200px
     border-radius: 5px
+    .editInput
+        color: $background-navy
 
     input
         margin: 5px
@@ -64,11 +67,11 @@ $mobile-breakpoint-large: 1024px
 
 @media (min-width: $mobile-breakpoint-small) and (max-width: $mobile-breakpoint-large)
     .mapped
-        width: 250px
+        width: 300px
         height: 200px
 
     .updateDiv
-        width: 250px
+        width: 300px
         height: 200px
 
     .mappedContainer

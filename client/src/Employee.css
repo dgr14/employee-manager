@@ -20,7 +20,7 @@ input {
   background-color: ivory;
 }
 .mapped .editButton {
-  background-color: ivory;
+  background-color: #E6E6FA;
   margin-left: 0.5em;
   border-radius: 5px;
   border: 2px solid #4C4CA6;
@@ -37,6 +37,9 @@ input {
   width: 80%;
   height: 200px;
   border-radius: 5px;
+}
+.updateDiv .editInput {
+  color: #4C4CA6;
 }
 .updateDiv input {
   margin: 5px;
@@ -61,12 +64,12 @@ input {
 
 @media (min-width: 320px) and (max-width: 1024px) {
   .mapped {
-    width: 250px;
+    width: 300px;
     height: 200px;
   }
 
   .updateDiv {
-    width: 250px;
+    width: 300px;
     height: 200px;
   }
 

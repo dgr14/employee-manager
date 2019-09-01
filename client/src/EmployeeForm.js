@@ -12,35 +12,40 @@ function EmployeeForm(props) {
             value={inputs.id}
             name="id"
             type="text"
-            placeholder="Employee ID"/>
+            placeholder="Employee ID"
+            className='empInput' />
 
             <input
             onChange={handleChange}
             value={inputs.firstName}
             name="firstName"
             type="text"
-            placeholder="First Name" />
+            placeholder="First Name" 
+            className='empInput' />
             
             <input
             onChange={handleChange}
             value={inputs.lastName}
             name="lastName"
             type="text"
-            placeholder="Last Name" />
+            placeholder="Last Name" 
+            className='empInput' />
             
             <input 
             onChange={handleChange}
             value={inputs.email}
             name="email"
             type="text"
-            placeholder="E-Mail"/>
+            placeholder="E-Mail"
+            className='empInput' />
             
             <input 
             onChange={handleChange}
             value={inputs.phoneNumber}
             name="phoneNumber"
             type="text"
-            placeholder="Phone Number"/>
+            placeholder="Phone Number"
+            className='empInput' />
             <div className='formButton  '>
             <button onClick={handleSubmit} value='create' className='submitButton'> Submit </button>
             </div>

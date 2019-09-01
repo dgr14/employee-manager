@@ -30,7 +30,9 @@ class App extends Component {
       }).reverse()
       return (
         <div className="App">
+          <div className='headerTextDiv'>
           <h1 className='headerText'>Employee Manager</h1>
+          </div>
           <View />
           <div className='mappedDiv'>
             {mappedEmployees}
