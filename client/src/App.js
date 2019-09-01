@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios'
 import View from './View'
 import { withEmployees } from './context/EmployeeProvider'
 import Employee from './Employee'

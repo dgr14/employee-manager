@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from 'react'
+import React, { Component } from 'react'
 import { withEmployees } from './context/EmployeeProvider'
 import './Employee.css'
 
@@ -57,13 +57,14 @@ render(){
           <p>Last Name: {employee.lastName}</p>
           <p>E-mail: {employee.email}</p>
           <p>Phone Number: {employee.phoneNumber}</p>
-
+          <div className='editButtonDiv'>
           <button onClick={() => {
             rerender()
-            {/* editEmployee() */}
+      
             this.handleToggle()
-            }}>Edit</button>
-
+            }}
+            className='editButton'>Edit</button>
+          </div>
         </div>
         :
         <div className="updateDiv">

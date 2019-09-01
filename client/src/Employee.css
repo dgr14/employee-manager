@@ -4,15 +4,26 @@ input {
   margin: 0.5em 2.5em;
 }
 
-button {
+.mapped {
+  width: 80%;
+  height: 200px;
+}
+.mapped p {
+  display: inline-block;
+  margin: 0.5em 0.25em;
+}
+.mapped .editButtonDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ivory;
+}
+.mapped .editButton {
   background-color: ivory;
   margin-left: 0.5em;
   border-radius: 2.5px;
   height: 2em;
-}
-
-.mapped {
-  width: 80%;
+  width: 10em;
 }
 
 .updateDiv {
@@ -21,7 +32,8 @@ button {
   justify-content: left;
   margin: 1em 2em;
   background-color: ivory;
-  width: 25%;
+  width: 80%;
+  height: 200px;
   border-radius: 5px;
 }
 .updateDiv input {
