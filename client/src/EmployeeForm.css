@@ -15,4 +15,17 @@ button {
   width: 5em;
 }
 
+@media (min-width: 320px) {
+  .empForm {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .empForm input {
+    width: 20em;
+  }
+}
+
 /*# sourceMappingURL=EmployeeForm.css.map */

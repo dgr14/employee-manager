@@ -12,3 +12,18 @@ button
 
 .submitButton, .editButton
     width: 5em
+
+$mobile-breakpoint-small: 320px
+
+@media (min-width: $mobile-breakpoint-small)
+
+    .empForm
+        display: flex
+        flex-direction: column
+        input
+            width: 20em
+
+        .formButton
+        display: flex
+        align-items: center
+        justify-content: center

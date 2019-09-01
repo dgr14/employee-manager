@@ -20,7 +20,8 @@ input
     .editButton
         background-color: ivory
         margin-left: 0.5em
-        border-radius: 2.5px
+        border-radius: 5px
+        border: 2px solid #4C4CA6
         height: 2em
         width: 10em
 
@@ -43,6 +44,8 @@ input
         margin: 5px
         width: 7.5em
         background-color: #4C4CA6
+        border-radius: 5px
+        border: 2px solid #4C4CA6
         color: ivory
 
     .updateButtonDiv
@@ -51,3 +54,14 @@ input
         display: flex
         align-items: center
         justify-content: center
+
+$mobile-breakpoint-small: 320px
+
+@media only screen and (max-width: $mobile-breakpoint-small)
+
+    .mappedContainer
+        display: flex
+
+    .mapped
+        display: flex
+        flex-direction: column

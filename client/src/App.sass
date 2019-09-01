@@ -20,3 +20,12 @@
     p
         margin: 0.25em
         background-color: ivory
+
+$mobile-breakpoint-small: 320px
+
+@media (min-width: $mobile-breakpoint-small)
+    .headerText
+        text-align: center
+    .mappedDiv
+        display: flex
+        flex-direction: column

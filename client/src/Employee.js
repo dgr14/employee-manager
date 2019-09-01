@@ -57,6 +57,7 @@ render(){
           <p>Last Name: {employee.lastName}</p>
           <p>E-mail: {employee.email}</p>
           <p>Phone Number: {employee.phoneNumber}</p>
+          
           <div className='editButtonDiv'>
           <button onClick={() => {
             rerender()
