@@ -61,7 +61,6 @@ render(){
           <div className='editButtonDiv'>
           <button onClick={() => {
             rerender()
-      
             this.handleToggle()
             }}
             className='editButton'>Edit</button>

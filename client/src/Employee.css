@@ -81,6 +81,10 @@ input {
     display: flex;
     flex-direction: column;
   }
+
+  .editButton {
+    margin: 0.25em 0;
+  }
 }
 
 /*# sourceMappingURL=Employee.css.map */
