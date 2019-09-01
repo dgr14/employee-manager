@@ -41,7 +41,7 @@ function EmployeeForm(props) {
             name="phoneNumber"
             type="text"
             placeholder="Phone Number"/>
-            <div className='formButton'>
+            <div className='formButton  '>
             <button onClick={handleSubmit} value='create' className='submitButton'> Submit </button>
             </div>
         </form>

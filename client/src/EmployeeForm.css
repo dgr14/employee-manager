@@ -9,22 +9,31 @@ button {
   margin-left: 0.5em;
   border-radius: 2.5px;
   height: 2em;
+  outline: none;
 }
 
 .submitButton, .editButton {
   width: 5em;
 }
 
-@media (min-width: 320px) {
+.empForm {
+  display: flex;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
   .empForm {
     display: flex;
     flex-direction: column;
-    display: flex;
     align-items: center;
     justify-content: center;
   }
   .empForm input {
     width: 20em;
+  }
+  .empForm .formButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

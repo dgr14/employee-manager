@@ -1,7 +1,14 @@
+$lavender: #E6E6FA
+
 .App
     .headerText
+        background-color: $lavender
+        border: solid 2px black
+        border-radius: 10px
         margin: 0.5em 0.5em 0.2em 0.5em
         font-size: 3em
+        text-align: center
+
 
 .mappedDiv
     display: grid
@@ -22,10 +29,13 @@
         background-color: ivory
 
 $mobile-breakpoint-small: 320px
+$mobile-breakpoint-large: 1024px
 
-@media (min-width: $mobile-breakpoint-small)
+@media (min-width: $mobile-breakpoint-small) and (max-width: $mobile-breakpoint-large)
     .headerText
         text-align: center
     .mappedDiv
         display: flex
         flex-direction: column
+        align-items: center
+        justify-content: center

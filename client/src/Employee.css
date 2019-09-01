@@ -2,6 +2,7 @@ input {
   background-color: ivory;
   border-radius: 2.5px;
   margin: 0.5em 2.5em;
+  outline: none;
 }
 
 .mapped {
@@ -55,10 +56,20 @@ input {
   background-color: ivory;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-@media only screen and (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 1024px) {
+  .mapped {
+    width: 250px;
+    height: 200px;
+  }
+
+  .updateDiv {
+    width: 250px;
+    height: 200px;
+  }
+
   .mappedContainer {
     display: flex;
   }

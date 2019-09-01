@@ -1,3 +1,4 @@
+$lavender: #E6E6FA
 input
     background-color: ivory
     border-radius: 5px
@@ -9,21 +10,27 @@ button
     margin-left: 0.5em
     border-radius: 2.5px
     height: 2em
+    outline: none
 
 .submitButton, .editButton
     width: 5em
 
+.empForm
+    display: flex
 $mobile-breakpoint-small: 320px
+$mobile-breakpoint-large: 1024px
 
-@media (min-width: $mobile-breakpoint-small)
+@media (min-width: $mobile-breakpoint-small) and (max-width: $mobile-breakpoint-large)
 
     .empForm
         display: flex
         flex-direction: column
+        align-items: center
+        justify-content: center
         input
             width: 20em
 
         .formButton
-        display: flex
-        align-items: center
-        justify-content: center
+            display: flex
+            align-items: center
+            justify-content: center

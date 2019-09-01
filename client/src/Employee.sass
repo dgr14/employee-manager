@@ -1,7 +1,10 @@
+$lavender: #E6E6FA
+
 input
     background-color: ivory
     border-radius: 2.5px
     margin: 0.5em 2.5em
+    outline: none
 
 .mapped
     width: 80%
@@ -53,11 +56,20 @@ input
         background-color: ivory
         display: flex
         align-items: center
-        justify-content: center
+        justify-content: space-around
 
 $mobile-breakpoint-small: 320px
+$mobile-breakpoint-large: 1024px
 
-@media only screen and (max-width: $mobile-breakpoint-small)
+
+@media (min-width: $mobile-breakpoint-small) and (max-width: $mobile-breakpoint-large)
+    .mapped
+        width: 250px
+        height: 200px
+
+    .updateDiv
+        width: 250px
+        height: 200px
 
     .mappedContainer
         display: flex
@@ -65,3 +77,4 @@ $mobile-breakpoint-small: 320px
     .mapped
         display: flex
         flex-direction: column
+        
