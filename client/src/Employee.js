@@ -15,7 +15,6 @@ class Employee extends Component {
     }
   }
 
-  
   // toggle = () => {
   //   console.log('testing toggle state')
   //   this.setState(prevState => {
@@ -48,45 +47,44 @@ render(){
       return (
         <div className='mapContainer'>
 
-        {this.state.toggle ?
+          {this.state.toggle ?
 
-        <div className='mapped'>
+          <div className='mapped'>
 
-          <p>Employee ID: {employee.id}</p>
-          <p>First Name: {employee.firstName}</p>
-          <p>Last Name: {employee.lastName}</p>
-          <p>E-mail: {employee.email}</p>
-          <p>Phone Number: {employee.phoneNumber}</p>
+            <p>Employee ID: {employee.id}</p>
+            <p>First Name: {employee.firstName}</p>
+            <p>Last Name: {employee.lastName}</p>
+            <p>E-mail: {employee.email}</p>
+            <p>Phone Number: {employee.phoneNumber}</p>
 
-          <div className='editButtonDiv'>
-          <button onClick={() => {
-            rerender()
-            this.handleToggle()
-            }}
-            className='editButton'>Edit</button>
-          </div>
-        </div>
-        :
-        <div className="updateDiv">
-
-          <input name="id" onChange={this.handleChange} placeholder={`Employee ID: ${this.state.id}`} className='editInput' />
-          <input name="firstName" onChange={this.handleChange} placeholder={`First Name: ${this.state.firstName}`} className='editInput' />
-          <input name="lastName" onChange={this.handleChange} placeholder={`Last Name: ${this.state.lastName}`} className='editInput' />
-          <input name="email" onChange={this.handleChange} placeholder={`E-Mail: ${this.state.email}`} className='editInput' />
-          <input name="phoneNumber" onChange={this.handleChange} placeholder={`Phone Number: ${this.state.phoneNumber}`} className='editInput' />
-
-          <div className='updateButtonDiv'>
+            <div className='editButtonDiv'>
             <button onClick={() => {
-              editEmployee({id: this.state.id, firstName: this.state.firstName,lastName: this.state.lastName, email: this.state.email, phoneNumber: this.state.phoneNumber, _id: employee._id}, employee._id)
-            this.handleToggle()}}>Submit</button>
-            <button onClick={() => {
-            removeOldEmployee(employee._id)
-            this.handleToggle()}}>Delete</button>
+              rerender()
+              this.handleToggle()
+              }}
+              className='editButton'>Edit</button>
+            </div>
           </div>
+          :
+          <div className="updateDiv">
 
-        </div>
-        }
-        
+            <input name="id" onChange={this.handleChange} placeholder={`Employee ID: ${this.state.id}`} className='editInput' />
+            <input name="firstName" onChange={this.handleChange} placeholder={`First Name: ${this.state.firstName}`} className='editInput' />
+            <input name="lastName" onChange={this.handleChange} placeholder={`Last Name: ${this.state.lastName}`} className='editInput' />
+            <input name="email" onChange={this.handleChange} placeholder={`E-Mail: ${this.state.email}`} className='editInput' />
+            <input name="phoneNumber" onChange={this.handleChange} placeholder={`Phone Number: ${this.state.phoneNumber}`} className='editInput' />
+            
+            <div className='updateButtonDiv'>
+              <button onClick={() => {
+                editEmployee({id: this.state.id, firstName: this.state.firstName,lastName: this.state.lastName, email: this.state.email, phoneNumber: this.state.phoneNumber, _id: employee._id}, employee._id)
+              this.handleToggle()}}>Submit</button>
+              <button onClick={() => {
+              removeOldEmployee(employee._id)
+              this.handleToggle()}}>Delete</button>
+            </div>
+
+          </div>
+          }
         </div>
     )
   }

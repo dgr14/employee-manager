@@ -25,8 +25,6 @@ class EmployeeProvider extends Component {
         }
     }
 
-    
-
     handleChange = (e) => {
         const { name, value } = e.target
 
@@ -142,12 +140,7 @@ export const withEmployees = C => props => (
         {value => <C {...value} {...props} />}
     </Consumer>
 )
-
 export default EmployeeProvider
-
-
-
-
 
 
 // Hooks Example

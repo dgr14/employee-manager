@@ -37,7 +37,7 @@ function EmployeeForm(props) {
             name="email"
             type="text"
             placeholder="E-Mail"
-            className='empInput' />
+            className='emailInput' />
             
             <input 
             onChange={handleChange}
