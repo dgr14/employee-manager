@@ -65,6 +65,16 @@ button {
     align-items: center;
     justify-content: center;
   }
+
+  .emailInput {
+    width: 20em;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .emailInput::placeholder {
+    color: #4C4CA6;
+  }
 }
 
 /*# sourceMappingURL=EmployeeForm.css.map */
