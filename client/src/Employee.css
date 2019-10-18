@@ -7,20 +7,28 @@ input {
 .mapped {
   width: 80%;
   height: 200px;
-  -moz-box-shadow: 3px 3px 5px 6px #ccc;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   box-shadow: 3px 3px 5px 6px #ccc;
 }
+
 .mapped p {
   display: inline-block;
   margin: 0.5em 0.25em;
 }
+
 .mapped .editButtonDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: ivory;
 }
+
 .mapped .editButton {
   background-color: #E6E6FA;
   margin-left: 0.5em;
@@ -28,29 +36,39 @@ input {
   border: 2px solid #4C4CA6;
   height: 2em;
   width: 10em;
+  font-weight: bold;
 }
 
 .updateDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   margin: 1em 2em;
   background-color: ivory;
   width: 80%;
   height: 200px;
   border-radius: 5px;
-  -moz-box-shadow: 3px 3px 5px 6px #000;
   -webkit-box-shadow: 3px 3px 5px 6px #000;
   box-shadow: 3px 3px 5px 6px #000;
 }
+
 .updateDiv .editInput {
   color: #4C4CA6;
 }
+
 .updateDiv input {
   margin: 5px;
   background-color: ivory;
   height: 2em;
 }
+
 .updateDiv button {
   margin: 5px;
   width: 7.5em;
@@ -58,13 +76,24 @@ input {
   border-radius: 5px;
   border: 2px solid #4C4CA6;
   color: ivory;
+  font-weight: bold;
 }
+
 .updateDiv .updateButtonDiv {
   border-radius: 2.5px;
   background-color: ivory;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.updateDiv .updateButtonDiv .editButton, .updateDiv .updateButtonDiv .deleteButton {
+  border: 2px solid black;
 }
 
 @media (min-width: 320px) and (max-width: 1024px) {
@@ -72,24 +101,26 @@ input {
     width: 300px;
     height: 200px;
   }
-
   .updateDiv {
     width: 300px;
     height: 200px;
   }
-
   .mappedContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
-
   .mapped {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-
   .editButton {
     margin: 0.25em 0;
   }
 }
-
 /*# sourceMappingURL=Employee.css.map */

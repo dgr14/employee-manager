@@ -7,7 +7,6 @@ input
     margin: 0.5em 1.5em
     
 .empInput
-    width: 10em
     font-size: 16px
     text-align: center
 
@@ -15,9 +14,10 @@ input
     color: $background-navy
 
 .emailInput
-    width: 25em
     font-size: 16px
     text-align: center
+    grid-column: 1 / span 2
+    grid-row: 3
 
 .emailInput::placeholder
     color: $background-navy
@@ -30,20 +30,35 @@ button
     outline: none
 
 .submitButton
-    width: 6em
+    width: 100px
+    height: 25px
     background-color: $lavender
-    border: 2px solid ivory
+    border: 2px solid black
     border-radius: 5px
-    margin-right: 2em
+    margin: 15px 15px
+    font-weight: bold
 
 .formButton
     display: flex
     align-items: center
     justify-content: center
 
-.empForm
+.formContainerDiv
     display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
 
+.empForm
+    width: 50%
+    display: grid
+    align-items: center
+    justify-content: center
+    grid-template-columns: auto auto
+    grid-template-rows: auto auto auto
+    background-color: ivory
+    border: 5px solid black
+    border-radius: 5px
 
 $mobile-breakpoint-small: 320px
 $mobile-breakpoint-large: 1024px

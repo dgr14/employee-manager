@@ -31,6 +31,8 @@ handleToggle = () => {
 
 }
 
+// Do I need a new function for handling toggle to incidentForm?
+
 handleChange = (e) => {
   const { name, value } = e.target
   this.setState(prevState => ({
@@ -58,11 +60,14 @@ render(){
             <p>Phone Number: {employee.phoneNumber}</p>
 
             <div className='editButtonDiv'>
-            <button onClick={() => {
-              rerender()
-              this.handleToggle()
-              }}
-              className='editButton'>Edit</button>
+              {/* Need to add fucntionality to the 'Add Incident' Button */}
+              <button className='editButton'>Add Incident</button>
+              <button onClick={() => {
+                rerender()
+                this.handleToggle()
+                }}
+                className='editButton'>Edit Information</button>
+              
             </div>
           </div>
           :
@@ -77,10 +82,12 @@ render(){
             <div className='updateButtonDiv'>
               <button onClick={() => {
                 editEmployee({id: this.state.id, firstName: this.state.firstName,lastName: this.state.lastName, email: this.state.email, phoneNumber: this.state.phoneNumber, _id: employee._id}, employee._id)
-              this.handleToggle()}}>Submit</button>
+              this.handleToggle()}}
+                className='editButton'>Submit</button>
               <button onClick={() => {
               removeOldEmployee(employee._id)
-              this.handleToggle()}}>Delete</button>
+              this.handleToggle()}}
+                className='deleteButton'>Delete</button>
             </div>
 
           </div>

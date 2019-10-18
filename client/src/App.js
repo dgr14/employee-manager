@@ -31,7 +31,7 @@ class App extends Component {
       return (
         <div className="App">
           <div className='headerTextDiv'>
-          <h1 className='headerText'>Employee Manager</h1>
+            <h1 className='headerText'>Employee Manager</h1>
           </div>
           <View />
           <div className='mappedDiv'>
