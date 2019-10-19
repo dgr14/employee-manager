@@ -95,6 +95,10 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 25px 25px 0px 25px;
+  margin: 25px 150px 0px 150px;
+  border: 2px solid black;
+  border-radius: 25px;
 }
 
 .empForm {

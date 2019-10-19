@@ -1,14 +1,14 @@
-.App .headerText {
-  background-color: #E6E6FA;
-  border: solid 2px black;
-  border-radius: 25px;
-  margin: 0.5em 0.5em 0.2em 0.5em;
-  font-size: 3em;
-  text-align: center;
-  padding: 0.25em 1.5em;
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.headerTextDiv {
+.headerCompDiv {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,6 +26,10 @@
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 10px 50px;
+  margin: 25px 50px;
 }
 
 .mapped {

@@ -89,7 +89,6 @@ render(){
               this.handleToggle()}}
                 className='deleteButton'>Delete</button>
             </div>
-
           </div>
           }
         </div>

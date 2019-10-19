@@ -1,0 +1,21 @@
+.headerDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  background-color: #E6E6FA;
+  border: solid 2px black;
+  text-align: center;
+  padding: 0.25em 1.5em;
+}
+
+.headerDiv .headerText {
+  background-color: #E6E6FA;
+}
+/*# sourceMappingURL=Header.css.map */

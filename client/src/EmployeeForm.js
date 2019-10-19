@@ -4,7 +4,7 @@ import { withEmployees } from './context/EmployeeProvider'
 
 function EmployeeForm(props) {
     const {handleChange, handleSubmit, inputs  } = props
-    // console.log(inputs)
+    console.log(inputs)
     return (
         <div className='formContainerDiv'>
             <form className='empForm'>

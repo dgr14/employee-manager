@@ -4,6 +4,10 @@ input {
   outline: none;
 }
 
+.mapContainer {
+  padding: 25px 0px;
+}
+
 .mapped {
   width: 80%;
   height: 200px;
@@ -31,7 +35,7 @@ input {
 
 .mapped .editButton {
   background-color: #E6E6FA;
-  margin-left: 0.5em;
+  margin-left: 2em;
   border-radius: 5px;
   border: 2px solid #4C4CA6;
   height: 2em;
