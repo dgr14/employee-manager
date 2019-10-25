@@ -96,13 +96,13 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 25px 25px 0px 25px;
-  margin: 25px 150px 0px 150px;
-  border: 2px solid black;
+  margin: 25px 100px 0px 100px;
+  border: 2px solid ivory;
   border-radius: 25px;
+  width: 55%;
 }
 
 .empForm {
-  width: 50%;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
